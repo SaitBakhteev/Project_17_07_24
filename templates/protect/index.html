@@ -1,0 +1,9 @@
+{% extends 'flatpages/main.html' %}
+{% block content %}
+    <h3>Страница авторизованного пользователя {{ request.user.username }}</h3>
+    <div> Персональная информация </div>
+    <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Выйти"/>    
+    </form>    
+{% endblock content %}
